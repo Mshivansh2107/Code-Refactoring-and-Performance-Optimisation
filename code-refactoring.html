@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Refactoring & Performance Optimization Report</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="antialiased">
+    <header class="bg-white/80 backdrop-blur-lg sticky top-0 z-50 shadow-sm">
+        <nav class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex-shrink-0">
+                    <h1 class="text-xl font-bold text-gray-800">Refactoring Report</h1>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="#overview" class="nav-link px-3 py-2 rounded-md text-sm font-medium text-gray-600">Overview</a>
+                        <a href="#readability" class="nav-link px-3 py-2 rounded-md text-sm font-medium text-gray-600">Readability</a>
+                        <a href="#performance" class="nav-link px-3 py-2 rounded-md text-sm font-medium text-gray-600">Performance</a>
+                        <a href="#process" class="nav-link px-3 py-2 rounded-md text-sm font-medium text-gray-600">Process</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section id="overview" class="py-16 md:py-24 bg-white">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Project "DataSphere" Optimization</h2>
+                <p class="mt-4 max-w-2xl mx-auto text-lg text-gray-600">
+                    This report details the refactoring initiative for the open-source 'DataSphere' library. The primary goals were to enhance code readability for better maintainability and significantly boost performance for key data processing operations. This section provides a high-level summary of the impactful results achieved.
+                </p>
+                <div class="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-sm text-left">
+                        <h3 class="text-lg font-semibold text-gray-800">Avg. Load Time</h3>
+                        <p class="mt-2 text-3xl font-bold text-blue-600">-32%</p>
+                        <p class="mt-1 text-sm text-gray-500">Reduced from 1850ms to 1258ms</p>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-sm text-left">
+                        <h3 class="text-lg font-semibold text-gray-800">Memory Usage</h3>
+                        <p class="mt-2 text-3xl font-bold text-blue-600">-24%</p>
+                        <p class="mt-1 text-sm text-gray-500">Peak usage down from 128MB to 97MB</p>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-sm text-left">
+                        <h3 class="text-lg font-semibold text-gray-800">Code Complexity</h3>
+                        <p class="mt-2 text-3xl font-bold text-blue-600">-45%</p>
+                        <p class="mt-1 text-sm text-gray-500">Lowered Cyclomatic Complexity score</p>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-sm text-left">
+                        <h3 class="text-lg font-semibold text-gray-800">Bundle Size</h3>
+                        <p class="mt-2 text-3xl font-bold text-blue-600">-18%</p>
+                        <p class="mt-1 text-sm text-gray-500">Reduced via tree-shaking & dependency audit</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="readability" class="py-16 md:py-24">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center">
+                    <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Enhancing Code Readability</h2>
+                    <p class="mt-4 max-w-3xl mx-auto text-lg text-gray-600">
+                        A key objective was to make the codebase more intuitive and easier for new contributors to understand. We focused on simplifying complex functions, using modern language features, and improving naming conventions. This section provides interactive examples of the code changes made. Use the buttons to explore different refactoring patterns.
+                    </p>
+                </div>
+                <div class="mt-12">
+                    <div class="flex justify-center space-x-2 sm:space-x-4 mb-8">
+                        <button class="readability-btn active px-4 py-2 text-sm sm:text-base font-semibold bg-white border border-gray-300 rounded-md shadow-sm" data-example="loops">Loop Optimization</button>
+                        <button class="readability-btn px-4 py-2 text-sm sm:text-base font-semibold bg-white border border-gray-300 rounded-md shadow-sm" data-example="async">Async/Await</button>
+                        <button class="readability-btn px-4 py-2 text-sm sm:text-base font-semibold bg-white border border-gray-300 rounded-md shadow-sm" data-example="destructuring">Destructuring</button>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div>
+                            <h3 class="text-xl font-semibold text-center mb-4 text-gray-700">Before</h3>
+                            <div id="code-before" class="code-block"></div>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold text-center mb-4 text-green-600">After</h3>
+                            <div id="code-after" class="code-block"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="performance" class="py-16 md:py-24 bg-white">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center">
+                    <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Performance Impact Analysis</h2>
+                     <p class="mt-4 max-w-3xl mx-auto text-lg text-gray-600">
+                        Performance was benchmarked across several key operations before and after refactoring. The interactive chart below visualizes these improvements. Click on a metric to update the chart and see how the 'DataSphere' library now performs under various loads. The goal is to provide clear, quantitative evidence of the optimization's success.
+                    </p>
+                </div>
+                <div class="mt-12">
+                    <div class="flex flex-wrap justify-center gap-2 sm:gap-4 mb-8">
+                        <button class="filter-btn active px-4 py-2 font-medium bg-gray-200 text-gray-700 rounded-full" data-metric="loadTime">Initial Load Time</button>
+                        <button class="filter-btn px-4 py-2 font-medium bg-gray-200 text-gray-700 rounded-full" data-metric="memory">Memory Usage</button>
+                        <button class="filter-btn px-4 py-2 font-medium bg-gray-200 text-gray-700 rounded-full" data-metric="dataProcessing">Data Processing</button>
+                        <button class="filter-btn px-4 py-2 font-medium bg-gray-200 text-gray-700 rounded-full" data-metric="fps">UI Rendering FPS</button>
+                    </div>
+                    <div id="chart-description" class="text-center max-w-2xl mx-auto mb-6 text-gray-600"></div>
+                    <div class="chart-container">
+                        <canvas id="performanceChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="process" class="py-16 md:py-24">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center">
+                     <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Our Refactoring Process</h2>
+                     <p class="mt-4 max-w-3xl mx-auto text-lg text-gray-600">
+                        Our approach was systematic, ensuring that changes were both impactful and safe. We followed a structured process to identify bottlenecks, implement improvements, and validate the results. This visual guide outlines the key stages of our workflow, providing insight into how we achieved the project's goals.
+                    </p>
+                </div>
+                <div class="mt-12 max-w-4xl mx-auto">
+                    <div class="flex flex-col md:flex-row items-center justify-center space-y-8 md:space-y-0 md:space-x-8">
+                        <div class="flex flex-col items-center text-center p-4">
+                            <div class="flex items-center justify-center w-16 h-16 bg-blue-100 text-blue-600 rounded-full text-2xl font-bold">1</div>
+                            <h4 class="mt-4 text-lg font-semibold">Profiling & Analysis</h4>
+                            <p class="mt-1 text-gray-600">Used profiling tools to identify performance bottlenecks and code "hotspots".</p>
+                        </div>
+                        <div class="hidden md:block text-gray-300 text-4xl">&rarr;</div>
+                        <div class="flex flex-col items-center text-center p-4">
+                            <div class="flex items-center justify-center w-16 h-16 bg-blue-100 text-blue-600 rounded-full text-2xl font-bold">2</div>
+                            <h4 class="mt-4 text-lg font-semibold">Targeted Refactoring</h4>
+                            <p class="mt-1 text-gray-600">Implemented specific optimizations and readability improvements in isolated branches.</p>
+                        </div>
+                         <div class="hidden md:block text-gray-300 text-4xl">&rarr;</div>
+                        <div class="flex flex-col items-center text-center p-4">
+                            <div class="flex items-center justify-center w-16 h-16 bg-blue-100 text-blue-600 rounded-full text-2xl font-bold">3</div>
+                            <h4 class="mt-4 text-lg font-semibold">Benchmarking</h4>
+                            <p class="mt-1 text-gray-600">Ran comprehensive tests to measure performance changes and prevent regressions.</p>
+                        </div>
+                    </div>
+                </div>
+                 <div class="mt-16 text-center bg-white p-8 rounded-lg shadow-sm max-w-3xl mx-auto">
+                    <h3 class="text-2xl font-bold text-gray-800">Conclusion</h3>
+                    <p class="mt-4 text-gray-600">The refactoring of 'DataSphere' was a resounding success. We not only achieved significant, measurable performance gains but also drastically improved the developer experience by enhancing code clarity. This dual focus ensures the project is not only faster for users but also more sustainable and scalable for future development.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p>&copy; 2025 Refactoring Analysis. All Rights Reserved.</p>
+            <p class="text-sm text-gray-400 mt-2">Interactive report generated for project demonstration.</p>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
