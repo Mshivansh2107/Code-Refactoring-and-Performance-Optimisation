@@ -28,8 +28,8 @@ README.md              # Project documentation
 - [Chart.js](https://www.chartjs.org/) for data visualization
 
 ## 👤 Author
-Dhruv Agarwal  
-Email: dhruvagarwal923@gmail.com
+Shivansh Gupta
+Email: 1234567shivansh@gmail.com
 
 ---
 
